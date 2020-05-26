@@ -1,0 +1,87 @@
+body {
+    text-align: center;
+    font-family: Chalkduster;
+    color: white;
+    background-color: black;
+    background-image: url("https://www.chromethemer.com/download/hd-wallpapers/chalkboard-3840x2160.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.hangman-title {
+    font-size: 62px;
+    margin-top: 45px;
+}
+
+.word {
+    font-size: 31px;
+    margin-top: 60px;
+}
+
+#instructions {
+    font-size: 18px;
+    margin-top: 0px;
+    color: peachpuff;
+}
+
+.letter-list {
+    font-size: 31px;
+}
+
+.hangman-image {
+    height: 30%;
+    width: 30%;
+}
+
+.fade-in {
+   animation: fadeIn ease 2.2s;
+   -webkit-animation: fadeIn ease 2.2s;
+   -moz-animation: fadeIn ease 2.2s;
+   -o-animation: fadeIn ease 2.2s;
+   -ms-animation: fadeIn ease 2.2s;
+ }
+ @keyframes fadeIn {
+   0% {
+     opacity:0;
+   }
+   100% {
+     opacity:1;
+   }
+ }
+ 
+ @-moz-keyframes fadeIn {
+   0% {
+     opacity:0;
+   }
+   100% {
+     opacity:1;
+   }
+ }
+ 
+ @-webkit-keyframes fadeIn {
+   0% {
+     opacity:0;
+   }
+   100% {
+     opacity:1;
+   }
+ }
+ 
+ @-o-keyframes fadeIn {
+   0% {
+     opacity:0;
+   }
+   100% {
+     opacity:1;
+   }
+ }
+ 
+ @-ms-keyframes fadeIn {
+   0% {
+     opacity:0;
+   }
+   100% {
+     opacity:1;
+ }

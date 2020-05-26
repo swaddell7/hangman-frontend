@@ -10,6 +10,35 @@ body {
     background-size: cover;
 }
 
+.or-sign-up {
+  font-size: 18px;
+  color: peachpuff;
+  margin-top: 300px;
+  margin-bottom: 50px;
+}
+
+#login {
+  font-size: 42px;
+}
+
+input[type='text'] {
+  font-size: 42px;
+  font-family: Chalkduster;
+  color: mintcream;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+input[type=submit] {
+  font-size: 25px;
+  font-family: Chalkduster;
+  color: peachpuff;
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
 .hangman-title {
     font-size: 62px;
     margin-top: 45px;

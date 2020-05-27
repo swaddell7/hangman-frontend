@@ -5,6 +5,7 @@
     <title>Hangman</title>
     <script defer type="text/javascript" src="src/index.js"></script>
     <script defer type="text/javascript" src="src/mack.js"></script>
+    <script defer type="text/javascript" src="src/stefani.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css" />
   </head>
 
@@ -17,18 +18,18 @@
         <form autocomplete="off" id="login" name="login">
           <label for="username">Username:</label>
           <input type="text" id="username" name="username"><br>
-          <input type="submit" value="Log In">
+          <input type="submit" id="log-in-button" value="Log In">
         </form>
       </div>
 
       <div id="start-game-view" style="display: none" data-id=''>
         <!-- ADD RULES/INSTRUCTIONS HERE BEFORE THE START GAME CLICK -->
-        <button type="button">Start a New Game</button>
+        <button type="button" id="start-button">Start a New Game</button>
       </div>
 
       <div id="game-view" style="display: none">
         <h1 class="hangman-title"> H A N G M A N </h1>
-        <h3 class="word"> _ _ _ _ </h3>
+        <h3 class="word"></h3>
         <img class="hangman-image" src="https://i.imgur.com/BG6nKOf.png">
         <p id="instructions"> Click to select a letter! </p>
         <div class="letters-list">

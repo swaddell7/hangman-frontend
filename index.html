@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Hangman</title>
     <script defer type="text/javascript" src="src/index.js"></script>
+    <script defer type="text/javascript" src="src/mack.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css" />
   </head>
 
@@ -24,8 +25,12 @@
         <h1 class="hangman-title"> H A N G M A N </h1>
         <h3 class="word"> _ _ _ _ </h3>
         <img class="hangman-image" src="https://i.imgur.com/BG6nKOf.png">
-        <p id="instructions"> Press a key to select a letter! </p>
-        <p class="letter-list"> A B C D E F G H I J K L M N O P Q R S T U V W X Y Z </p>
+        <p id="instructions"> Click to select a letter! </p>
+        <div class="letters-list">
+          <ul id="letters-container">
+
+          </ul>
+        </div>
       </div>
 
     </div>

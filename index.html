@@ -12,12 +12,17 @@
     <div class="fade-in">
 
       <div id="login-view" style="display: block">
-        <p class="or-sign-up"> Enter a new or existing Username!</p>
+        <p class="or-sign-up" style="text-align: center"> Enter a new or existing Username!</p>
         <form autocomplete="off" id="login" name="login">
           <label for="username">Username:</label>
           <input type="text" id="username" name="username"><br>
           <input type="submit" value="Log In">
         </form>
+      </div>
+
+      <div id="start-game-view" style="display: none" data-id=''>
+        <!-- ADD RULES/INSTRUCTIONS HERE BEFORE THE START GAME CLICK -->
+        <button type="button">Start a New Game</button>
       </div>
 
       <div id="game-view" style="display: none">

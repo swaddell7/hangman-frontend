@@ -8,6 +8,12 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 .or-sign-up {
@@ -35,6 +41,7 @@ input[type=submit] {
   font-family: Chalkduster;
   color: peachpuff;
   background: transparent;
+  outline: none;
   border: transparent;
   cursor: pointer;
 }
@@ -55,8 +62,33 @@ input[type=submit] {
     color: peachpuff;
 }
 
-.letter-list {
-    font-size: 31px;
+#letter-button {
+  font-size: 31px;
+  font-family: Chalkduster;
+  color: peachpuff;
+  background: transparent;
+  outline: none;
+  border-radius: 6px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+#letter-button:hover {
+  font-size: 31px;
+  font-family: Chalkduster;
+  color: black;
+  background: peachpuff;
+  outline: none;
+  cursor: pointer;
+}
+
+#letter-button:active {
+  font-size: 24px;
+  font-family: Chalkduster;
+  color: black;
+  background: peachpuff;
+  outline: none;
+  cursor: pointer;
 }
 
 .hangman-image {

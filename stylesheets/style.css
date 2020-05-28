@@ -58,7 +58,7 @@ input[type='text'] {
 }
 
 #log-in-button:active {
-  font-size: 18px;
+  font-size: 31px;
   font-family: Chalkduster;
   color: white;
   background: transparent;
@@ -90,7 +90,7 @@ input[type='text'] {
 }
 
 #start-button:active {
-  font-size: 24px;
+  font-size: 38px;
   font-family: Chalkduster;
   color: white;
   background: transparent;
@@ -139,7 +139,7 @@ input[type='text'] {
 }
 
 #letter-button:active {
-  font-size: 24px;
+  font-size: 42px;
   font-family: Chalkduster;
   color: white;
   background: none;

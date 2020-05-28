@@ -36,10 +36,63 @@ input[type='text'] {
   background: transparent;
 }
 
-input[type=submit] {
+#log-in-button {
   font-size: 25px;
   font-family: Chalkduster;
   color: peachpuff;
+  background: transparent;
+  outline: none;
+  border: transparent;
+  padding: 9px;
+  cursor: pointer;
+}
+
+#log-in-button:hover {
+  font-size: 31px;
+  font-family: Chalkduster;
+  color: peachpuff;
+  background: transparent;
+  outline: none;
+  border: transparent;
+  cursor: pointer;
+}
+
+#log-in-button:active {
+  font-size: 18px;
+  font-family: Chalkduster;
+  color: white;
+  background: transparent;
+  outline: none;
+  border: transparent;
+  cursor: pointer;
+}
+
+#start-button {
+  font-size: 32px;
+  font-family: Chalkduster;
+  color: peachpuff;
+  background: transparent;
+  outline: none;
+  border: transparent;
+  margin-top: 400px;
+  padding: 9px;
+  cursor: pointer;
+}
+
+#start-button:hover {
+  font-size: 38px;
+  font-family: Chalkduster;
+  color: peachpuff;
+  background: transparent;
+  outline: none;
+  border: transparent;
+  cursor: pointer;
+}
+
+#start-button:active {
+  font-size: 24px;
+  font-family: Chalkduster;
+  color: white;
   background: transparent;
   outline: none;
   border: transparent;
@@ -62,22 +115,25 @@ input[type=submit] {
     color: peachpuff;
 }
 
+
+
 #letter-button {
   font-size: 31px;
   font-family: Chalkduster;
   color: peachpuff;
   background: transparent;
   outline: none;
+  border: none;
   border-radius: 6px;
-  margin: 3px;
+  padding: 9px;
   cursor: pointer;
 }
 
 #letter-button:hover {
-  font-size: 31px;
+  font-size: 42px;
   font-family: Chalkduster;
-  color: black;
-  background: peachpuff;
+  color: peachpuff;
+  background: none;
   outline: none;
   cursor: pointer;
 }
@@ -85,8 +141,8 @@ input[type=submit] {
 #letter-button:active {
   font-size: 24px;
   font-family: Chalkduster;
-  color: black;
-  background: peachpuff;
+  color: white;
+  background: none;
   outline: none;
   cursor: pointer;
 }
@@ -145,4 +201,5 @@ input[type=submit] {
    }
    100% {
      opacity:1;
+   }
  }

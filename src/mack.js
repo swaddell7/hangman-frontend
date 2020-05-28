@@ -41,7 +41,8 @@ function letterGuess(event) {
         for (let i = 0; i < splitWord.length; i++) {
             if (event.target.innerHTML === splitWord[i]) {
                 letter = splitWord[i]
-                letterReplace()
+                console.log(letter)
+                // letterReplace(event)
             } else {
                 // Window alert('Hello')
             }
@@ -49,8 +50,8 @@ function letterGuess(event) {
     }
 }
 
-function letterReplace() {
-    splitWord.indexOf(letter)
-}
+// function letterReplace() {
+//     console.log(letter)
+// }
 
 main()

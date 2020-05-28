@@ -1,6 +1,7 @@
 function main() {
     letterButtons()
     displayWord()
+    letterGuess()
 }
 
 // Alphabet array for letter select
@@ -13,19 +14,43 @@ let words = ['cat', 'noodle', 'spaceship']
 // Iterate over alphabet array and create a button for each letter
 function letterButtons() {
     const lettersContainer = document.querySelector('#letters-container')
+    lettersContainer.addEventListener('click', letterGuess)
 
     for (let i = 0; i < alphabet.length; i++) {
         lettersContainer.innerHTML +=
-        `<button type="button" id="letter-button">${alphabet[i].toUpperCase()}</button>`
+        `<button type="button" id="letter-button">${alphabet[i]}</button>`
     }
-    console.log(alphabet)
 }
 
+let randomWord = words[Math.floor(Math.random() * words.length)]
+const wordDisplay = document.querySelector('.word')
+let hiddenWord = randomWord.replace(/[a-z]/gi, '_')
+let hiddenWordSpaced = hiddenWord.split('')
+
 function displayWord() {
-    const wordDisplay = document.querySelector('.word')
-    let randomWord = words[Math.floor(Math.random() * words.length)]
-    let hiddenWord = randomWord.replace(/_/g, "_")
-    wordDisplay.innerHTML += `${hiddenWord}`
+    wordDisplay.innerHTML += `${hiddenWordSpaced.join(' ')}`
+}
+
+let letter
+let buttonLetter
+let splitWord = randomWord.split('')
+
+function letterGuess(event) {
+    buttonLetter = document.querySelector('#letter-button').innerHTML
+    if (event.target.id = 'letter-button') {
+        for (let i = 0; i < splitWord.length; i++) {
+            if (event.target.innerHTML === splitWord[i]) {
+                letter = splitWord[i]
+                letterReplace()
+            } else {
+                // Window alert('Hello')
+            }
+        }
+    }
+}
+
+function letterReplace() {
+    splitWord.indexOf(letter)
 }
 
 main()

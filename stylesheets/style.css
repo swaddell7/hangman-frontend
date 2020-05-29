@@ -19,7 +19,7 @@ body {
 .or-sign-up {
   font-size: 18px;
   color: peachpuff;
-  margin-top: 300px;
+  margin-top: 200px;
   margin-bottom: 50px;
 }
 
@@ -65,6 +65,10 @@ input[type='text'] {
   outline: none;
   border: transparent;
   cursor: pointer;
+}
+
+#start-game-view {
+  margin-top: 150px;
 }
 
 #welcome {

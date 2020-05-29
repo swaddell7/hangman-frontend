@@ -3,7 +3,7 @@ body {
     font-family: Chalkduster;
     color: white;
     background-color: black;
-    background-image: url("https://www.chromethemer.com/download/hd-wallpapers/chalkboard-3840x2160.jpg");
+    background-image: url("../images/background/black_chalkboard.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -107,12 +107,13 @@ input[type='text'] {
 .word {
     font-size: 31px;
     margin-top: 60px;
+    margin-bottom: 64px;
 }
 
 #instructions {
     font-size: 18px;
-    margin-top: 0px;
     color: peachpuff;
+    margin-top: 31px;
 }
 
 
@@ -148,8 +149,8 @@ input[type='text'] {
 }
 
 .hangman-image {
-    height: 30%;
-    width: 30%;
+    height: 18%;
+    width: 18%;
 }
 
 .fade-in {

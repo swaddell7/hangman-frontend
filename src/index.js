@@ -23,6 +23,7 @@ function handleUsernameFormSubmit() {
 function createUser(){
   const startGame = document.querySelector('#start-game-view');
   const letterButtons = document.querySelector('#letters-container');
+  const gameOver = document.querySelector('#game-over-view')
   const form = document.querySelector('#login')
   form.addEventListener('submit', function(event){
     event.preventDefault();
@@ -37,6 +38,7 @@ function createUser(){
     .then(newUser => {
       startGame.dataset.id = newUser.id;
       letterButtons.dataset.id = newUser.id;
+      gameOver.dataset.id = newUser.id;
     })
   })
 }

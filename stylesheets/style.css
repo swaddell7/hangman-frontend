@@ -74,7 +74,7 @@ input[type='text'] {
   background: transparent;
   outline: none;
   border: transparent;
-  margin-top: 400px;
+  margin-top: 50px;
   padding: 9px;
   cursor: pointer;
 }
@@ -145,6 +145,26 @@ input[type='text'] {
   color: white;
   background: none;
   outline: none;
+  cursor: pointer;
+}
+
+#next-round-button {
+  font-size: 24px;
+  font-family: Chalkduster;
+  color: peachpuff;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#next-round-button:hover {
+  font-size: 28px;
+  font-family: Chalkduster;
+  color: white;
+  background: none;
+  outline: none;
+  border: none;
   cursor: pointer;
 }
 

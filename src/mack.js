@@ -1,7 +1,10 @@
-function main() {
-    letterButtons()
+function mackMain() {
     displayWord()
-    letterGuess()
+    letterButtons()
+}
+
+function newRound() {
+
 }
 
 // Alphabet array for letter select
@@ -14,44 +17,78 @@ let words = ['cat', 'noodle', 'spaceship']
 // Iterate over alphabet array and create a button for each letter
 function letterButtons() {
     const lettersContainer = document.querySelector('#letters-container')
-    lettersContainer.addEventListener('click', letterGuess)
-
+    lettersContainer.innerHTML = ``
     for (let i = 0; i < alphabet.length; i++) {
         lettersContainer.innerHTML +=
         `<button type="button" id="letter-button">${alphabet[i]}</button>`
     }
+    lettersContainer.addEventListener('click', event => letterGuess(event))
 }
 
-let randomWord = words[Math.floor(Math.random() * words.length)]
+// const wordToGuess = 'noodle'
+const wordToGuess = words[Math.floor(Math.random() * words.length)]
 const wordDisplay = document.querySelector('.word')
-let hiddenWord = randomWord.replace(/[a-z]/gi, '_')
-let hiddenWordSpaced = hiddenWord.split('')
+const hiddenWord = wordToGuess.replace(/[a-z]/gi, '_')
+const hiddenWordSpaced = hiddenWord.split('')
 
 function displayWord() {
-    wordDisplay.innerHTML += `${hiddenWordSpaced.join(' ')}`
+    wordDisplay.innerHTML = `${hiddenWordSpaced.join(' ')}`
 }
 
 let letter
 let buttonLetter
-let splitWord = randomWord.split('')
+let splitWord = wordToGuess.split('')
+
+
 
 function letterGuess(event) {
     buttonLetter = document.querySelector('#letter-button').innerHTML
-    if (event.target.id = 'letter-button') {
+    if (event.target.id === 'letter-button') {
         for (let i = 0; i < splitWord.length; i++) {
             if (event.target.innerHTML === splitWord[i]) {
-                letter = splitWord[i]
-                console.log(letter)
-                // letterReplace(event)
-            } else {
-                // Window alert('Hello')
+                let changedWord = wordDisplay.innerText
+                changedWord = changedWord.replace(/ /g,'').split('')
+                changedWord[i] = event.target.innerHTML
+                let updatedWord = changedWord.join(' ')
+                wordDisplay.innerText = updatedWord
+                if(changedWord.join('') === wordToGuess) {
+                    getUser(event);
+                    nextRound();
+                }
             }
         }
     }
 }
 
-// function letterReplace() {
-//     console.log(letter)
-// }
 
-main()
+
+function getUser(event) {
+    const userId = parseInt(event.target.parentNode.dataset.id)
+    fetch(`${usersUrl}/${userId}`)
+    .then(resp => resp.json())
+    .then(user => addPoint(user))
+} 
+
+function addPoint(user) {
+    const newPoints = user.points + 1
+    const reqObj = {
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify({ 'points': newPoints })
+    }
+    fetch(`${usersUrl}/${user.id}`, reqObj)
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+}
+
+function nextRound() {
+    const nextRoundView = document.querySelector('#next-round-view');
+    const nextRoundButton = document.querySelector('#next-round-button');
+    nextRoundView.style.display = 'block'
+    nextRoundButton.addEventListener('click', function(){
+        mackMain()
+    })
+}
+
+
+mackMain()

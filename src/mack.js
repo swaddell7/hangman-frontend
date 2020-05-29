@@ -2,18 +2,13 @@ function mackMain() {
     displayWord()
     letterButtons()
 }
-
 function newRound() {
-
 }
-
 // Alphabet array for letter select
-let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 
+let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
 // Words sample array
-let words = ['cat', 'noodle', 'spaceship']
-
+let words = ['noodles', 'cat', 'spaceship']
 // Iterate over alphabet array and create a button for each letter
 function letterButtons() {
     const lettersContainer = document.querySelector('#letters-container')
@@ -24,23 +19,16 @@ function letterButtons() {
     }
     lettersContainer.addEventListener('click', event => letterGuess(event))
 }
-
-// const wordToGuess = 'noodle'
-const wordToGuess = words[Math.floor(Math.random() * words.length)]
-const wordDisplay = document.querySelector('.word')
-const hiddenWord = wordToGuess.replace(/[a-z]/gi, '_')
-const hiddenWordSpaced = hiddenWord.split('')
-
+let wordToGuess = words[Math.floor(Math.random() * words.length)]
+let wordDisplay = document.querySelector('.word')
+let hiddenWord = wordToGuess.replace(/[a-z]/gi, '_')
+let hiddenWordSpaced = hiddenWord.split('')
 function displayWord() {
     wordDisplay.innerHTML = `${hiddenWordSpaced.join(' ')}`
 }
-
 let letter
 let buttonLetter
 let splitWord = wordToGuess.split('')
-
-
-
 function letterGuess(event) {
     buttonLetter = document.querySelector('#letter-button').innerHTML
     if (event.target.id === 'letter-button') {
@@ -54,21 +42,23 @@ function letterGuess(event) {
                 if(changedWord.join('') === wordToGuess) {
                     getUser(event);
                     nextRound();
+                    setTimeout(function(){
+                    }, 1000)
                 }
             }
         }
     }
 }
-
-
-
+function nextRound(){
+  const nextRoundView = document.querySelector('#next-round-view');
+  nextRoundView.style.display = 'block'
+}
 function getUser(event) {
     const userId = parseInt(event.target.parentNode.dataset.id)
     fetch(`${usersUrl}/${userId}`)
     .then(resp => resp.json())
     .then(user => addPoint(user))
-} 
-
+}
 function addPoint(user) {
     const newPoints = user.points + 1
     const reqObj = {
@@ -80,15 +70,14 @@ function addPoint(user) {
     .then(resp => resp.json())
     .then(data => console.log(data))
 }
-
-function nextRound() {
-    const nextRoundView = document.querySelector('#next-round-view');
-    const nextRoundButton = document.querySelector('#next-round-button');
-    nextRoundView.style.display = 'block'
-    nextRoundButton.addEventListener('click', function(){
-        mackMain()
-    })
-}
-
-
 mackMain()
+
+const nextRoundButton = document.querySelector('#next-round-button');
+nextRoundButton.addEventListener('click', function(){
+  nextRoundButton.style.display = 'none'
+  wordToGuess = words[Math.floor(Math.random() * words.length)]
+  wordDisplay = document.querySelector('.word')
+  hiddenWord = wordToGuess.replace(/[a-z]/gi, '_')
+  hiddenWordSpaced = hiddenWord.split('')
+  displayWord()
+})

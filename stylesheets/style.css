@@ -188,6 +188,11 @@ input[type='text'] {
     width: 18%;
 }
 
+#leaderboard {
+  padding-left: 650px;
+  text-align: left;
+}
+
 .fade-in {
    animation: fadeIn ease 2.2s;
    -webkit-animation: fadeIn ease 2.2s;

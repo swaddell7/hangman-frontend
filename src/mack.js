@@ -41,7 +41,6 @@ function letterGuess(event) {
     buttonLetter = document.querySelector('#letter-button').innerHTML
     if (event.target.id === 'letter-button') {
         if (!splitWord.includes(event.target.innerHTML)) {
-            console.log('hereee')
             incorrectGuess();
         }
         for (let i = 0; i < splitWord.length; i++) {
@@ -66,7 +65,6 @@ function letterGuess(event) {
 
 let incorrectGuesses = 0
 function incorrectGuess() {
-    console.log('hiiiii')
     incorrectGuesses += 1
 
     imageContainer = document.querySelector('.hangman-image');
@@ -81,7 +79,8 @@ function incorrectGuess() {
     } else if (incorrectGuesses === 5) {
         imageContainer.src = 'images/hangman-phases/hangman_6.png'
     } else if (incorrectGuesses === 6) {
-        imageContainer.src = 'images/hangman-phases/hangman_final.png'
+        imageContainer.src = 'images/hangman-phases/hangman_final.png';
+        handleGameOver()
     }
 }
 
@@ -116,16 +115,45 @@ nextRoundButton.addEventListener('click', function () {
     nextRoundView.style.display = 'none'
     wordToGuess = words[Math.floor(Math.random() * words.length)]
     splitWord = wordToGuess.split('')
-    console.log(wordToGuess)
     wordDisplay = document.querySelector('.word')
     hiddenWord = wordToGuess.replace(/[a-z]/gi, '_')
-    console.log(hiddenWord)
     hiddenWordSpaced = hiddenWord.split('')
     displayWord(hiddenWord);
 })
 
 function handleGameOver() {
+    const loginView = document.querySelector('#login-view')
+    const startGameView = document.querySelector('#start-game-view')
+    const gameView = document.querySelector('#game-view')
+    const gameOverView = document.querySelector('#game-over-view')
 
+    loginView.style.display = 'none';
+    startGameView.style.display = 'none';
+    gameView.style.display = 'none';
+    gameOverView.style.display = 'block'
+
+    getUsers()
+}
+
+function getUsers() {
+    fetch(usersUrl)
+    .then(resp => resp.json())
+    .then(users => showLeaderboard(users))
+}
+
+// function getCurrentUser() {
+//     currentUserId = document.querySelector('#game-over-view').dataset.id
+//     fetch(`${usersUrl}/${currentUserId}`)
+//     .then(resp => resp.json())
+//     .then(currentUser => showLeaderboard(currentUser))
+// }
+
+function showLeaderboard(users) {
+    const failedWord = document.querySelector('#failed-word')
+    const leaderboard = document.querySelector('#leaderboard')
+    const sortedUsers = users.sort((a, b) => (a.points < b.points) ? 1 : -1)
+    sortedUsers.forEach(user => leaderboard.innerHTML += `<li>${user.username} | ${user.points}`);
+    failedWord.innerHTML = `Your last word was: ${wordToGuess}`
 }
 
 mackMain()

@@ -8,9 +8,8 @@ let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
     'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 // Words sample array
-let words = ['noodles', 'cat', 'spaceship']
 
-// Lives for incorrect guesses
+let words = ['noodle', 'cat', 'spaceship', 'fire', 'code', 'house', 'tree', 'cowboy', 'farm', 'raza', 'jess', 'duke', 'mack', 'stefani', 'store', 'computer', 'google', 'desk', 'table', 'chair', 'television', 'auz', 'party', 'birthday', 'cake', 'pie', 'apple', 'buttercup', 'chocolate', 'hangman', 'game', 'park', 'headphones', 'sound', 'money', 'dollar', 'wedge', 'fight', 'brawl', 'pillar', 'tower', 'monument', 'arch', 'door', 'floor', 'ceiling', 'wall', 'brick', 'gravel', 'concrete', 'grass', 'leaf', 'pear', 'grapefruit', 'vanilla', 'pudding', 'wafer', 'cookie', 'icecream', 'flavor', 'color', 'taste', 'vision', 'matrix', 'watermelon', 'sandwich', 'burger', 'pizza', 'yogurt', 'keyboard', 'paper', 'shades', 'sunglasses', 'cactus', 'plant', 'salad', 'glass', 'cup', 'hydroflask', 'whale', 'dolphin', 'fish', 'shark', 'dog', 'puppy', 'pupper', 'goldfish', 'husky', 'coyote', 'dachshund', 'terrier', 'bird', 'chirp', 'twitter', 'instagram', 'social', 'website', 'html', 'css', 'javascript', 'java', 'c', 'sql', 'ruby', 'mouse', 'rat', 'card', 'poker', 'circle', 'rectangle', 'triangle', 'trapezoid', 'zoo', 'word', 'guess', 'jeans', 'blue', 'red', 'green', 'yellow', 'racecar', 'lion', 'powwow', 'pzazz', 'tiger', 'xerox', 'microsoft', 'peewee', 'football', 'basketball', 'baseball', 'diamond', 'silver', 'gold', 'metal', 'steel', 'iron', 'magenta', 'magnificent', 'caveman', 'club', 'yoke', 'oogabooga']
 
 // Iterate over alphabet array and create a button for each letter
 function letterButtons() {

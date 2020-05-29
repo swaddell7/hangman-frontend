@@ -23,15 +23,15 @@
       </div>
 
       <div id="start-game-view" style="display: none; margin-top: 200px;" data-id=''>
-        <h1>Welcome to Hangman!</h1>
-        <p>Lorem ipsum dolor sit amet, no sed scaevola deserunt, saperet molestiae scribentur usu no, putant deserunt scripserit no sed. Et est animal oporteat. Stet duis invenire ius an. Sanctus ponderum ut vix. Ea sint voluptatibus pri, vel id sale essent fabellas. Vis an omnesque euripidis evertitur. Ea facete inciderint eum, per id habemus mnesarchum appellantur, quo posse clita detracto ut.</p>>
+        <h1 id="welcome">Welcome to Hangman!</h1>
+        <p id="game-guide">A random word will appear as blanks, and it's your job to uncover the word.  Select letters to guess, and watch the word come to life.  But be careful- you can only have 5 wrong guesses!</p>>
         <button type="button" id="start-button">Start a New Game</button>
       </div>
 
       <div id="game-view" style="display: none">
         <h1 class="hangman-title"> H A N G M A N </h1>
         <h3 class="word"></h3>
-        <img class="hangman-image" src="https://i.imgur.com/BG6nKOf.png">
+        <img class="hangman-image" src="images/hangman-phases/hangman_1.png">
         <p id="instructions"> Click to select a letter! </p>
         <div class="letters-list">
           <ul id="letters-container" data-id=''>

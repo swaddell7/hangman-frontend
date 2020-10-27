@@ -12,7 +12,7 @@
 # Technologies
 
 * Back-end was built using Ruby on Rails.
-* Front-end was built using Vanilla JavaScript.
+* Front-end was built using HTML and Vanilla JavaScript.
 * Used basic CSS for styling.
 
 Video Walkthrough: https://youtu.be/5OC4FflYQRM
